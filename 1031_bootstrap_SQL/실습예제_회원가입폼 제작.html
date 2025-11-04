@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제_회원가입폼 제작</title>
+  <!-- 1. 부트스트랩 css cdn주소 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- 2. 부트스트랩 js cdn주소 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha34-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <style>
+    /* body *{margin: 0 auto;} */
+    body{background-color: skyblue;width: 100%; height: 100%;}
+    .sign_up{
+      width: 600px;height: 640px;
+      background-color: #fcfcfc;
+      position: absolute;
+      top:50%;left:50%;
+      transform: translate(-50%,-50%);
+      border-radius: 10px;
+    }
+    fieldset{
+      width: 560px;height: 600px;
+      position: absolute;
+      top:50%;left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    legend{font-size: 20px;font-weight: bold;}
+    .f_line,.l_line{
+      justify-content: space-between;
+    }
+    .f_line_c{width: 48%;}
+    .f_line input{
+      width: 100%;
+    }
+    .how{width: 65%;}
+    .code{width: 31%;}
+    .l_line{border-bottom: 1px solid #ccc; height: 100px;}
+    .ch01{text-indent: 10px;}
+  </style>
+</head>
+<body>
+  <h2>실습예제_회원가입폼 제작</h2>
+  <form name="회원가입" method="post" action="서버">
+    <div class="sign_up">
+      <fieldset>
+        <legend>회원가입</legend>
+        <!-- 첫째줄 -->
+        <div class="f_line line mb-3 input-group">
+          <!-- 이름 -->
+          <div class="f_line_c">
+            <label for="name" class="mb-2">이름</label>
+            <input type="text" id="name" maxlength="6" class="form-control">
+          </div>
+
+          <!-- 별명 -->
+          <div class="f_line_c">
+            <label for="n_name" class="mb-2">별명</label>
+            <input type="text" id="n_name" maxlength="15" class="form-control">
+          </div>
+        </div>
+
+        <!-- 둘째줄 -->
+        <div class="line mb-3">
+          <!-- 이메일 -->
+          <div>
+            <label for="email" class="mb-2">이메일</label>
+            <input type="text" id="email" maxlength="20" placeholder="you@example.com" class="w-100 form-control">
+            
+          </div>
+        </div>
+
+        <!-- 셋째줄 -->
+        <div class="line mb-3">
+          <!-- 주소 -->
+          <label for="address" class="mb-2">주소</label>
+          <input type="text" id="address" maxlength="25" placeholder="서울특별시 강남구" class="form-control">
+
+        </div>
+
+        <!-- 넷째줄 -->
+        <div class="line mb-3">
+          <!-- 상세주소 -->
+          <label for="more_address" class="mb-2">상세주소(필수 아님)</label>
+          <input type="text" id="more_address" maxlength="25" placeholder="상세주소를 입력하세요." class="form-control">
+        </div>
+
+        <!-- 다섯째줄 -->
+        <div class="line mb-3 input-group l_line">
+          <!-- 가입경로 -->
+          <div class="how">
+            <label for="how" class="mb-2">가입경로</label>
+            <select id="how" class="form-control">
+              <option value="">가입경로</option>
+              <option value="광고">광고</option>
+              <option value="지인추천">지인추천</option>
+              <option value="유튜브">유튜브</option>
+              <option value="책">책</option>
+            </select>
+          </div>
+
+          <!-- 추천인 코드 -->
+          <div class="code">
+            <label for="code" class="mb-2">추천인 코드</label>
+            <input type="text" id="code" maxlength="8" class="form-control">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input type="checkbox" id="ch01" class="form-check-input mb-4">
+          <label for="ch01" class="form-check-label ch01">개인정보 수집 및 이용에 동의합니다.</label>
+        </div>
+
+        <div>
+          <input type="submit" value="가입 완료" class="btn btn-primary w-100 py-2">
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</body>
+</html>

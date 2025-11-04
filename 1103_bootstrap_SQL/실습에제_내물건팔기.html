@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습에제_내물건팔기</title>
+  <!-- 1. 부트스트랩 css연결 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- 2. 부트스트랩 js연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- 3. 부트스트랩 아이콘 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+    .b_title{
+      margin: 30px auto;
+      width: 60%;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    .b_title::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 100px;
+      width: 100%;height: 1px;
+      background-color: #ccc;
+    }
+    .b_title h2{font-size: 30px;}
+    fieldset{width: 70%;margin: 0 auto;}
+    .b_box span{
+      cursor: pointer;
+      border: 1px solid #ccc;
+      line-height: 20px;
+    }
+    #fin{
+      background-color: rgb(255, 81, 0);
+    }
+    .f_w_bold{
+      font-weight: bold;
+    }
+    .img_f{cursor: pointer;}
+    .img_f_box{
+      color: #5c5c5c;
+      border: 1px solid #ccc;
+      width: 60px; height: 60px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .see{
+      text-decoration: none;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body class="w-100">
+  <!-- 제목 -->
+  <div class="b_title">
+    <i class="bi bi-x" style="font-size: 40px; cursor: pointer;"></i>
+    <h2 class="text-center">내 물건 팔기</h2>
+    <button class="btn" style="color: #ccc;">임시 저장</button>
+  </div>
+
+  <form name="내 물건 팔기" action="" method="">
+    <fieldset>
+      <legend style="display: none;">내 물건 팔기</legend>
+      <!-- 사진 첨부 -->
+      <div class="img_f_box mb-3">
+        <label for="img_f" class="img_f">
+          <i class="bi bi-camera-fill"></i>
+          <p class="num_f">0/10</p>
+        </label>
+        <input type="file" id="img_f" style="display: none;">
+      </div>
+
+      <!-- 제목 -->
+      <div>
+        <label for="s_title" class="mb-3 f_w_bold">제목</label>
+        <input type="text" id="s_title" placeholder="제목" class="form-control mb-3">
+      </div>
+
+      <!-- 거래 방식 -->
+      <div class="mb-3">
+        <label for="how" class="mb-3 f_w_bold">거래 방식</label>
+        <br/>
+        <div class="b_box mb-3">
+          <span class="badge rounded-pill text-bg-dark">판매하기</span>
+          <span class="badge rounded-pill text-dark text-bg-light">나눔하기</span>
+        </div>
+        <input type="text" id="how" class="form-control mb-1" placeholder="가격을 입력해주세요" maxlength="10">
+        <div>
+          <input type="checkbox" id="c01" class="form-check-input">
+          <label for="c01" class="form-check-label">가격 제안 받기</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="txt_box" class="mb-3 f_w_bold">자세한 설명</label>
+        <textarea style="height:200px;" name="" id="" cols="30" rows="10" class="form-control mb-2" placeholder="다산동에 올릴 게시글내용을 작성해주세요.(판매 금지 물품은 게시가 제한될 수 있어요.) 신뢰할 수 있는 거래를 위해 자세히 적어주세요. 과학기술정보통신부, 한국 인터넷진흥원과 함께 해요."></textarea>
+      </div>
+      <span class="badge text-bg-light text-dark mb-3" style="line-height: 18px;">자주 쓰는 문구</span>
+
+      <div class="mb-3">
+        <label for="where" class="mb-3 f_w_bold">거래 희망 장소</label>
+        <input type="text" id="where" placeholder="위치 추가" class="form-control">
+      </div>
+      
+      <div class="mb-3">
+        <a href="#" title="보여줄 동네 선택" class="see">보여줄 동네 선택 &#x003E;</a>
+      </div>
+
+      <div>
+        <input type="submit" id="fin" value="작성완료" class="btn w-100 text-light">
+      </div>
+    </fieldset>
+  </form>
+
+  <!-- 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.b_box span').click(function(){
+        $('.b_box span').removeClass('text-bg-dark text-light');
+        $('.b_box span').addClass('text-bg-light text-dark');
+        $(this).removeClass('text-bg-light text-dark');
+        $(this).addClass('text-bg-dark text-light');
+      });
+    });
+  </script>
+</body>
+</html>

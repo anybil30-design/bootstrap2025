@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습에제_표제작</title>
+  <!-- 1. 부트스트랩 css서식 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- 2. 부트스트랩 js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <style>
+    .wrap{width: 1200px; margin: 0 auto;position: relative; }
+    a{text-decoration: none;}
+    caption{display: none;}
+    h2{position: absolute;top:130px;}
+    .t1{width: 100%;position:absolute; top: 200px;}
+    .logout{text-decoration: none;}
+    caption{font-size: 24px;}
+    .act1{display: none;}
+    .page-link{border-radius: 0 !important;}
+    tbody tr:last-child,tfoot tr{border-color: #fff;}
+    thead tr th:first-child, thead tr th:nth-child(3), thead tr th:last-child{width: 100px;}
+    thead tr th:nth-child(4){width: 240px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>실습에제_표제작</h2>
+    <table class="table t1">
+      <caption>게시판</caption>
+      <thead>
+        <tr>
+          <th colspan="5"><a href="" title="" class="logout">로그아웃</a></th>
+        </tr>
+        <tr class="text-center">
+          <th>번호</th>
+          <th>제목</th>
+          <th>이름</th>
+          <th>날짜</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="text-center">
+            <td>1</td>
+            <td class="text-primary text-start"><a href="#" title="">12313</a></td>
+            <td>tester3</td>
+            <td>2020-05-04 14:20:54</td>
+            <td>6</td>
+          </tr>
+        <tr class="text-center">
+          <td>2</td>
+          <td class="text-primary text-start"><a href="#" title="">b111</a></td>
+          <td>홍길동</td>
+          <td>2020-05-04 13:36:19</td>
+          <td>1</td>
+        </tr>
+        <tr class="text-center">
+          <td>3</td>
+          <td class="text-primary text-start"><a href="#" title="">제목111</a></td>
+          <td>홍길동</td>
+          <td>2020-05-01 17:11:36</td>
+          <td>9</td>
+        </tr>
+        <tr class="text-center">
+          <td>4</td>
+          <td class="text-primary text-start"><a href="#" title="">11111</a></td>
+          <td>홍길동</td>
+          <td>2020-04-30 18:54:13</td>
+          <td>7</td>
+        </tr>
+        <tr class="text-center">
+          <td>5</td>
+          <td class="text-primary text-start"><a href="#" title="">12313</a></td>
+          <td>홍길동</td>
+          <td>2020-04-30 15:48:41</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <td colspan="5">
+            <nav arial-label="페이지 내비게이션">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a href="#" title="" class="page-link act1">[이전]</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link text-danger">1</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link">4</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link">5</a></li>
+                <li class="page-item"><a href="#" title="" class="page-link">[다음]</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+          <tr class="text-center">
+            <td colspan="5">
+              <select>
+                <option>검색대상</option>
+                <option>번호</option>
+                <option>제목</option>
+                <option>이름</option>
+                <option>날짜</option>
+                <option>조회수</option>
+              </select>
+              <input type="search" id="ser">
+              <label for="ser" class="btn btn-primary">검색</label>
+            </td>
+          </tr>
+        
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>
