@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01반응형 내비게이션</title>
+  <!-- 1. 부트스트랩 css연결 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- 2. 부트스트랩 js연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- 3. 부트스트랩 아이콘 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+    main{overflow-y: hidden;}
+    .logo{height: 30px;}
+    /* .s_item{height: 100px;} */
+    #myCarousel{width: 100%;}
+    .carousel-item{
+      position: relative; width: 100%;;
+      margin-bottom: 10px;
+    }
+    .carousel-item h3{
+      position: absolute; z-index:100;
+      font-size:1.5rem;
+      color: #fff;
+      left:50%;top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .carousel-item img{width: 100%;}
+
+    /* 점보트론 */
+    .jumbotron{
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+    }
+    .jumbotron h2{
+      font-size: 6rem;
+      margin-bottom: 20px;
+    }
+    .bg_img{
+      background-image:url('./images/jumb_img.png');
+      background-size:cover;background-position: center;
+      background-repeat: no-repeat;
+      height: 36vh;
+      position: relative;
+    }
+    .more1{position: absolute;bottom: 40px; left: 50%;transform: translateX(-50%);}
+
+    /* 2번 콘텐츠 */
+    .cont2_inner img{
+      width: 300px;
+      border-radius: 30px;
+      padding-bottom: 10px;
+      
+    }
+    .cont2_bg{
+      background-color: #fdfdfd;
+      box-shadow: 1px 1px 10px 3px rgba(0,0,0,.1);
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 상단헤더영역 -->
+  <header>
+    <!-- 내비게이션 바 -->
+    <nav class="navbar navbar-dark navbar-expand-md" aria-label="내비게이션바">
+      <!-- fluid = 유동적 -->
+      <div class="container-fluid">
+        <a href="#" title="카카오 로고">
+          <img src="./images/kakao_logo.png" alt="상단로고" class="logo">
+        </a>
+
+        <!-- 모바일 해상도일 경우 나오는 전체메뉴 버튼 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-label="전체메뉴" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 가로메뉴 -->
+        <!-- bs가 붙은 서식은 bootstrap script이다. -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-md-0 m-auto">
+            <li class="nav-item px-3">
+              <!-- active = 밝게 -->
+              <a href="#" title="" class="nav-link active text-dark">Home</a>
+            </li>
+            <li class="nav-item px-3">
+              <a href="#" title="" class="nav-link text-dark">Menu</a>
+            </li>
+            <li class="nav-item px-3">
+              <a href="#" title="" class="nav-link text-dark disabled">Disabled</a>
+            </li>
+            <li class="nav-item dropdown px-3">
+              <a href="#" title="" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown">드롭다운</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">menu1</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu2</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu3</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu4</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- 검색폼 -->
+          <form role="search">
+            <input type="search" placeholder="검색어 입력" aria-label="검색어 입력" class="form-control">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인콘텐츠 영역 -->
+  <main>
+    <!-- 1. 메인슬라이드 -->
+    <article id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <!-- 컨트롤 버튼 -->
+      <div class="carousel-indicators">
+        <button type="button" class="active" aria-label="slide1" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-current="true"></button>
+        <button type="button" aria-label="slide2" data-bs-target="#myCarousel"  data-bs-slide-to="1"></button>
+        <button type="button" aria-label="slide3" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- 슬라이드 박스 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- 접근성을 위한 제목태그 -->
+          <h3>타이틀</h3>
+          <img src="./images/slide1.jpg" alt="1">
+        </div>
+        <div class="carousel-item">
+          <h3>타이틀</h3>
+          <img src="./images/slide2.jpg" alt="2">
+        </div>
+        <div class="carousel-item">
+          <h3>타이틀</h3>
+          <img src="./images/slide3.jpg" alt="3">
+        </div>
+      </div>
+
+      <!-- 좌, 우측 버튼 -->
+      <!-- 좌측 -->
+      <button type="button" class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- 우측 -->
+      <button type="button" class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+    </article>
+
+    <!-- 3. 점보트론 -->
+    <article class="container mt-5">
+      <div class="jumbotron text-center bg-body-tertiary rounded-3 p-5">
+        <h2>Join the krew</h2>
+        <br class="pb-5">카카오 크루는 우리의 일상을 더 좋게 만들고 싶은 멋진 동료입니다.</br>
+          다양한 생각을 자유롭게 나누며, 언제나 놀라운 결과를 만들어내죠.</br>
+          당신도 세상을 바꾸고 싶나요? 카카오로 오세요!!
+        </p>
+        <p><a href="#" role="button" title="" class="btn btn-primary btn-md">더보기</a></p>
+      </div>
+    </article>
+
+    <!-- 2. 가로 3단 목록 콘텐츠 -->
+    <article class="container my-5">
+      <div class="row text-center cont2_inner">
+        <div class="col-lg-4">
+          <img src="./images/cont_img1.png" alt="">
+          <h2>2024 겨울 인턴십 온보딩(feat.뉴크루 웰컴키트)</h2>
+          <p>#문화#브런치</p>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="./images/cont_img2.png" alt="">
+          <h2>카카오의 개발자 교육 - 카카토오크 캠퍼스</h2>
+          <p>#성장 #유튜브</p>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="./images/cont_img3.png" alt="">
+          <h2>TECH FOR IMPACT "선한 기술로 사회문제를 해결해요"</h2>
+          <p>#동료#유튜브</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. 점보트론 -->
+    <article class="container">
+      <div class="jumbotron text-center bg-body-tertiary rounded-3 p-5 bg_img">
+        <!-- <h2>광고문구 title</h2> -->
+        <!-- <p class="pb-5">점보트론은 대형 스크린 TV의 상표명이자, 대형 전광판을 통칭하는 말입니다.<br/> -->
+        <!-- 블로그형 홈페이지에서 자주 사용되며, 회사 이미지나 사진을 첨부해놓고 그 위에 메뉴를 만드는 경우가 있습니다.<br/> -->
+        <!-- 중요한 정보를 적어놓은 쇼케이스를 메뉴 밑에다가 두는 경우가 많은데요, 이걸 부트스트랩에서 적용을 하려면 점보트론이 필요합니다. -->
+        <!-- </p> -->
+        <p><a href="#" role="button" title="" class="btn btn-primary btn-md more1">더보기</a></p>
+      </div>
+    </article>
+
+    <!-- 4. 가로 4단 목록 콘텐츠 -->
+    <article class="container mb-5">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 px-3">
+          <img src="./images/icon01.png" alt="" class="py-3">
+          <h2>100% 리얼 스토리 카카오 크루 이야기</h2>
+          <a href="#" role="button" title="크루 이야기 살펴보기" class="btn btn-light btn-line">크루 이야기 살펴보기 <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 px-3">
+          <img src="./images/icon02.png" alt="" class="py-3">
+          <h2>휴가부터 의료지원까지 크루 복지,혜택</h2>
+          <a href="#" role="button" title="크루 혜택 알아보기" class="btn btn-light btn-line">크루 혜택 알아보기 <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 px-3">
+          <img src="./images/icon03.png" alt="" class="py-3">
+          <h2>카카오 합류를 위한 영입절차</h2>
+          <a href="#" role="button" title="영입절차 확인하기" class="btn btn-light btn-line">영입절차 확인하기 <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 px-3">
+          <img src="./images/icon04.png" alt="" class="py-3">
+          <h2>카카오의 앞으로의 행보</h2>
+          <a href="#" role="button" title="더보기" class="btn btn-light btn-line">더보기 <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <!-- 하단 푸터영역 -->
+  <footer class="container bg-dark pt-3 pb-3">
+    <!-- 오른쪽 끝으로 보내기 -->
+    <div class="float-end">
+      <a href="#" title="위로 바로가기" class="text-decoration-none link-light ">Top</a>
+    </div>
+    <p>&copy;2025 Company, Inc. &middot;
+      <a href="#" title="이용약관" class="link-light text-decoration-none">Privacy</a>
+      &middot;
+      <a href="#" title="정보" class="link-light text-decoration-none">Terms</a>
+    </p>
+
+  </footer>
+</body>
+</html>
